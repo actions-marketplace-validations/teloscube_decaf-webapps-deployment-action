@@ -74,6 +74,8 @@ def get_version_from_package_json():
 def get_packager():
     if os.path.exists("yarn.lock"):
         return "yarn"
+    if os.path.exists("pnpm-lock.yaml"):
+        return "pnpm"
     else:
         return "npm"
 
